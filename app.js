@@ -8,12 +8,11 @@ app.use(express.json());
 
 // База данных товаров (в памяти сервера)
 let products = [
-    { id: 1, name: 'Смартфон X100', price: 29999 },
-    { id: 2, name: 'Ноутбук Pro', price: 54999 },
-    { id: 3, name: 'Наушники Air', price: 4999 }
+    { id: 1, name: 'POCO MOCO', price: 29999 },
+    { id: 2, name: 'MackBook Air m4', price: 89900 },
+    { id: 3, name: 'Air Pods Pro 3', price: 22000 }
 ];
 
-// ============= CRUD ОПЕРАЦИИ =============
 
 // CREATE (создание товара) - POST /products
 app.post('/products', (req, res) => {
@@ -90,7 +89,6 @@ app.delete('/products/:id', (req, res) => {
     });
 });
 
-// ============= ДОПОЛНИТЕЛЬНЫЕ МАРШРУТЫ =============
 
 // Главная страница
 app.get('/', (req, res) => {
@@ -114,8 +112,7 @@ app.use((req, res) => {
     });
 });
 
-// ============= ЗАПУСК СЕРВЕРА =============
 
 app.listen(port, () => {
-    console.log(`🚀 Сервер запущен на http://localhost:${port}`);
+    console.log(`Сервер запущен на http://localhost:${port}`);
 });
