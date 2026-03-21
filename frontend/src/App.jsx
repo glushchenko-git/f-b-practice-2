@@ -48,12 +48,8 @@ function App() {
         <Navbar user={user} onLogout={handleLogout} />
         <div className="container">
           <Routes>
-            <Route path="/login" element={
-              <Login onLogin={handleLogin} />
-            } />
-            <Route path="/register" element={
-              <Register />
-            } />
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/products" element={
               <PrivateRoute user={user}>
                 <Products user={user} />
@@ -84,9 +80,7 @@ function App() {
                 <UserEdit />
               </PrivateRoute>
             } />
-            <Route path="/" element={
-              <Navigate to="/products" />
-            } />
+            <Route path="/" element={<Navigate to="/products" />} />
           </Routes>
         </div>
       </div>
